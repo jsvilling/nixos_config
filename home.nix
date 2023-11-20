@@ -38,6 +38,12 @@
         plugins = [ "git" ];
         theme = "agnoster";
       };
+    };
+    vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+      ];
     }; 
   }; 
   
@@ -54,8 +60,6 @@
     gnomeExtensions.dash-to-dock
     jetbrains.rider
     google-chrome
-#    (pkgs.callPackage ./teams-pwa { inherit lib; }).chromium;
     (import ./teams-pwa pkgs).chromium
-#    (import ./teams-pwa { inherit lib stdenv imagemagick makeDesktopItem chromium copyDesktopItems google-chrome; }).chromium
   ];
 }
