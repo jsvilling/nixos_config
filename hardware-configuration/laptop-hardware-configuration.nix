@@ -23,6 +23,11 @@
       fsType = "vfat";
     };
 
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.desktop.peripherals.touchpad]
+    click-method='default'
+    '';
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

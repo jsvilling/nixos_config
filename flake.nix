@@ -15,6 +15,7 @@
       nixos-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          ./hardware-configuration/laptop-hardware-configuration.nix
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
