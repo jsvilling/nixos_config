@@ -45,6 +45,10 @@
         dracula-theme.theme-dracula
       ];
     }; 
+    git = {
+      enable = true;
+      userName = "Joshua Villing";
+    };
   }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
@@ -52,12 +56,12 @@
     tmate
     nix-output-monitor
     _1password-gui
-    git
     bat
     btop
     guake
     spotify
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.focus-follows-workspace
     jetbrains.rider
     google-chrome
     (import ./teams-pwa pkgs).chromium
