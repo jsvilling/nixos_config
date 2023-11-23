@@ -48,6 +48,7 @@
     git = {
       enable = true;
       userName = "Joshua Villing";
+      extraConfig.push.autoSetupRemote = true;
     };
   }; 
   
