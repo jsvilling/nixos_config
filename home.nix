@@ -49,6 +49,7 @@
       enable = true;
       userName = "Joshua Villing";
       extraConfig.push.autoSetupRemote = true;
+      extraConfig.core.editor = "vim";
     };
   }; 
   
