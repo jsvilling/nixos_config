@@ -65,6 +65,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-follows-workspace
     jetbrains.rider
+    jetbrains.datagrip
     google-chrome
     (import ./teams-pwa pkgs).chromium
     discord
