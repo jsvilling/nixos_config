@@ -69,6 +69,6 @@
     google-chrome
     (import ./teams-pwa pkgs).chromium
     discord
-    flameshot
+    asciidoc
   ];
 }
