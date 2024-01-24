@@ -70,5 +70,7 @@
     (import ./teams-pwa pkgs).chromium
     discord
     asciidoc
+    drawing
+    lazygit
   ];
 }
