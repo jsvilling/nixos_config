@@ -72,5 +72,6 @@
     asciidoc
     drawing
     lazygit
+    linux-firmware
   ];
 }

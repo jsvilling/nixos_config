@@ -7,13 +7,21 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      # HW Import is done based on host in flake.nix 
+      # HW Import is done based on host in t 
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub.enable = true;
+    grub.device = "nodev";
+    grub.useOSProber = true;
+    grub.efiSupport = true;
+  };
+  
+  #boot.loader.systemd-boot.enable = true;
+  
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
