@@ -70,8 +70,10 @@
     (import ./teams-pwa pkgs).chromium
     discord
     asciidoc
+    asciidoctor
     drawing
     lazygit
     linux-firmware
+    pkgs.unstable.obsidian
   ];
 }
