@@ -27,6 +27,7 @@
       
       nixos-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
+        
         modules = [
           ./hardware-configuration/laptop-hardware-configuration.nix
           ./configuration.nix
@@ -46,10 +47,10 @@
 
     nixos-desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-
+        
         modules = [
           ./hardware-configuration/desktop-hardware-configuration.nix
-          ./configuration.nix
+          ./configuration.nix 
           ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           home-manager.nixosModules.home-manager
           {
