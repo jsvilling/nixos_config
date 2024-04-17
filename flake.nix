@@ -30,6 +30,7 @@
         modules = [
           ./hardware-configuration/laptop-hardware-configuration.nix
           ./configuration.nix
+          ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay-unstable ]; })
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
