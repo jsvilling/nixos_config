@@ -30,7 +30,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Power
-  powerManagement.enable = false;
+  powerManagement.enable = true;
 
   # Nix stuff
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -62,6 +62,10 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # Wifi
+  hardware.enableRedistributableFirmware = true;
+  hardware.firmware = [ pkgs.wireless-regdb ];
 
   # Enable sound with pipewire.
   sound.enable = true;

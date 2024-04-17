@@ -59,11 +59,12 @@
     nix-output-monitor
     _1password-gui
     bat
-    btop
+    htop
     guake
     spotify
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-follows-workspace
+    jetbrains.idea-ultimate
     jetbrains.rider
     jetbrains.datagrip
     google-chrome
@@ -73,7 +74,11 @@
     asciidoctor
     drawing
     lazygit
-    linux-firmware
-    pkgs.unstable.obsidian
+    imagemagick
+    gimp
+    killall
+    unstable.linux-firmware
+    unstable.obsidian
+    unstable.terraform
   ];
 }
