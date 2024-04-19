@@ -68,7 +68,7 @@
     jetbrains.rider
     jetbrains.datagrip
     google-chrome
-    (import ./teams-pwa pkgs).chromium
+    (import ./teams-pwa pkgs).google-chrome
     discord
     asciidoc
     asciidoctor
