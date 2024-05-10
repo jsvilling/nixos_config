@@ -80,5 +80,7 @@
     unstable.linux-firmware
     unstable.obsidian
     unstable.terraform
+    chromium
+    neovim
   ];
 }
