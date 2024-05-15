@@ -50,6 +50,9 @@
       userName = "Joshua Villing";
       extraConfig.push.autoSetupRemote = true;
       extraConfig.core.editor = "vim";
+      extraConfig.gpg.format = "ssh";
+      extraConfig.commit.gpgsign = true;
+      extraConfig.user.signingkey = "~/.ssh/id_signedVlot.pub";
     };
   }; 
   
