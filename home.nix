@@ -85,5 +85,6 @@
     unstable.terraform
     chromium
     neovim
+    brave
   ];
 }
