@@ -67,7 +67,7 @@
     spotify
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-follows-workspace
-    jetbrains.idea-ultimate
+    unstable.jetbrains.idea-ultimate
     jetbrains.rider
     jetbrains.datagrip
     google-chrome
@@ -86,5 +86,6 @@
     chromium
     neovim
     brave
+    firefox-devedition
   ];
 }
