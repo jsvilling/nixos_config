@@ -68,7 +68,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-follows-workspace
     unstable.jetbrains.idea-ultimate
-    jetbrains.rider
+    unstable.jetbrains.rider
     jetbrains.datagrip
     google-chrome
     (import ./teams-pwa pkgs).google-chrome
