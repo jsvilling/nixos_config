@@ -23,17 +23,8 @@
     git = (import ./git.nix { inherit pkgs; });
     direnv = (import ./direnv.nix { inherit pkgs; });
     zsh = (import ./zsh.nix { inherit pkgs; });
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-    
-    vscode = {
-      enable = true;
-      extensions = with pkgs.vscode-extensions; [
-        dracula-theme.theme-dracula
-      ];
-    }; 
+    fzf = (import ./fzf.nix { inherit pkgs; });
+    vscode = (import ./vscode.nix { inherit pkgs; });
   }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
