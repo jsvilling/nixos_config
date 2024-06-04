@@ -20,40 +20,20 @@
   programs.home-manager.enable = true;
 
   programs = {
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
+    git = (import ./git.nix { inherit pkgs; });
+    direnv = (import ./direnv.nix { inherit pkgs; });
+    zsh = (import ./zsh.nix { inherit pkgs; });
     fzf = {
       enable = true;
       enableZshIntegration = true;
     };
-    zsh = {
-      enable = true;
-      enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
-      oh-my-zsh = {
-        enable = true;
-        plugins = [ "git" ];
-        theme = "agnoster";
-      };
-    };
+    
     vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
         dracula-theme.theme-dracula
       ];
     }; 
-    git = {
-      enable = true;
-      userName = "Joshua Villing";
-      extraConfig.push.autoSetupRemote = true;
-      extraConfig.core.editor = "vim";
-      extraConfig.gpg.format = "ssh";
-      extraConfig.commit.gpgsign = true;
-      extraConfig.user.signingkey = "~/.ssh/id_signedVlot.pub";
-    };
   }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
