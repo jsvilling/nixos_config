@@ -1,6 +1,11 @@
 { config, pkgs, lib, ... }:
 
-{
+
+let 
+
+    gitIdentity = pkgs.writeShellScriptBin "git-identity" (builtins.readFile ./git-identity.sh);
+
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "joshua";
@@ -29,6 +34,7 @@
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
   home.packages = with pkgs; [
+    gitIdentity
     tmate
     nix-output-monitor
     _1password-gui
