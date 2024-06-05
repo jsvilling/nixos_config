@@ -20,11 +20,11 @@
   programs.home-manager.enable = true;
 
   programs = {
-    git = (import ./git.nix { inherit pkgs; });
-    direnv = (import ./direnv.nix { inherit pkgs; });
-    zsh = (import ./zsh.nix { inherit pkgs; });
-    fzf = (import ./fzf.nix { inherit pkgs; });
-    vscode = (import ./vscode.nix { inherit pkgs; });
+    git = (import ./modules/git/git.nix { inherit pkgs; });
+    direnv = (import ./modules/direnv.nix { inherit pkgs; });
+    zsh = (import ./modules/zsh.nix { inherit pkgs; });
+    fzf = (import ./modules/fzf.nix { inherit pkgs; });
+    vscode = (import ./modules/vscode.nix { inherit pkgs; });
   }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
