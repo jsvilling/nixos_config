@@ -17,7 +17,7 @@
         start = "!git fetch vlot && git checkout -b $1-1 vlot/master";
         wip = "commit -a -m 'fixup! wip'";
         fup = "rebase HEAD~50 --autosquash";
-        bump = "!sh /etc/nixos/bump.sh";
+        bump = "!sh ./bump.sh";
     };
 
 }
