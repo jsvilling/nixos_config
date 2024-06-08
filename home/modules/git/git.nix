@@ -31,7 +31,9 @@
         start = "!git fetch vlot && git checkout -b $1-1 vlot/master";
         wip = "commit -a -m 'fixup! wip'";
         fup = "rebase HEAD~50 --autosquash";
+        fupm = "!git fetch vlot && git fup";
         bump = "!sh /etc/nixos/home/modules/git/bump.sh";
+        pr = "!sh /etc/nixos/home/modules/git/pr.sh";
         id = "! git-identity";
     };
 
