@@ -9,31 +9,19 @@ in {
   home.username = "joshua";
   home.homeDirectory = "/home/joshua";
 
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "23.05";
 
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs = {
-    direnv = (import ./modules/direnv.nix { inherit pkgs; });
-    zsh = (import ./modules/zsh.nix { inherit pkgs; });
-    fzf = (import ./modules/fzf.nix { inherit pkgs; });
-    vscode = (import ./modules/vscode.nix { inherit pkgs; });
-  }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
 
   imports = [
+    ./modules/direnv.nix
+    ./modules/fzf.nix
     ./modules/git/git.nix
     ./modules/guake.nix
+    ./modules/vscode.nix
+    ./modules/zsh.nix
   ];
 
   home.packages = with pkgs; [
