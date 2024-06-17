@@ -3,9 +3,14 @@
 {
     programs.vscode = {
         enable = true;
+        package = pkgs.vscodium;
         extensions = with pkgs.vscode-extensions; [
-            dracula-theme.theme-dracula
-            nix
+            asciidoctor.asciidoctor-vscode
+            bbenoist.nix
+            golang.go
+            haskell.haskell
+            justusadam.language-haskell
+            mkhl.direnv
         ];
     };
 }
