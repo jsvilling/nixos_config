@@ -1,20 +1,18 @@
 { config, pkgs, lib, ... }:
 
 {
-  home.username = "joshua";
-  home.homeDirectory = "/home/joshua";
-
+  programs.home-manager.enable = true;
   home.stateVersion = "23.05";
 
-  programs.home-manager.enable = true;
-  
-  home.sessionVariables.DIRENV_LOG_FORMAT="";
+  home.username = "joshua";
+  home.homeDirectory = "/home/joshua";
 
   imports = [
     ./modules/direnv.nix
     ./modules/fzf.nix
     ./modules/git/git.nix
     ./modules/guake.nix
+    ./modules/gnome.nix
     ./modules/vscode.nix
     ./modules/zsh.nix
   ];
@@ -26,8 +24,7 @@
     bat
     htop
     spotify
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.focus-follows-workspace
+
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rider
     jetbrains.datagrip
