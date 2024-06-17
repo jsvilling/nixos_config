@@ -9,26 +9,22 @@ in {
     programs.git = {
         enable = true;
 
-        userName = "Joshua Villing";
-
         extraConfig = {
             push.autoSetupRemote = true;
             core.editor = "vim";
-            gpg.format = "ssh";
-            commit.gpgsign = true;
-            
             
             user = {
-                signingkey = "~/.ssh/id_signedVlot.pub";
                 vlot = {
                     name = "Joshua Villing";
                     email = "joshua.villing@vlot.ch";
+                    gpgsign = true;
+                    gpgformat = "ssh";
                     signingkey = "~/.ssh/id_signedVlot.pub";
                 };
                 priv = {
                     name = "Joshua Villing";
                     email = "jsvilling@gmail.com";
-                    signingkey = "~/.ssh/id_signedVlot.pub";
+                    gpgsign = false;
                 };
             };
         };

@@ -1,11 +1,6 @@
 { config, pkgs, lib, ... }:
 
-
-let 
-
-    
-
-in {
+{
   home.username = "joshua";
   home.homeDirectory = "/home/joshua";
 
