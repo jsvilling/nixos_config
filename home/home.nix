@@ -6,8 +6,6 @@ let
     gitIdentity = pkgs.writeShellScriptBin "git-identity" (builtins.readFile ./git-identity.sh);
 
 in {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
   home.username = "joshua";
   home.homeDirectory = "/home/joshua";
 
@@ -33,6 +31,11 @@ in {
   }; 
   
   home.sessionVariables.DIRENV_LOG_FORMAT="";
+
+  imports = [
+    ./modules/guake.nix
+  ];
+
   home.packages = with pkgs; [
     gitIdentity
     tmate
@@ -40,7 +43,6 @@ in {
     _1password-gui
     bat
     htop
-    guake
     spotify
     gnomeExtensions.dash-to-dock
     gnomeExtensions.focus-follows-workspace
