@@ -2,21 +2,14 @@
 
 {
     
-    gtk = {
-        enable = true;
-        
-        theme.package = pkgs.tokyonight-gtk-theme;  
-        theme.name = "Tokyonight-Dark-BL";
-    };
-
     dconf.settings = {
-        "org/gnome/desktop/interface" = {
-            gtk-theme = "Tokyonight-Dark-BL";
+        "org/gnome/desktop/wm/preferences" = {
+            button-layout = ":minimize,maximize,close";
         };
     };
 
     home.packages = with pkgs; [
-        tokyonight-gtk-theme
+        gnome.gnome-tweaks
         gnomeExtensions.focus-follows-workspace
     ];
 }
