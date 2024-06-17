@@ -3,7 +3,7 @@
 
 let 
 
-    gitIdentity = pkgs.writeShellScriptBin "git-identity" (builtins.readFile ./git-identity.sh);
+    
 
 in {
   home.username = "joshua";
@@ -23,7 +23,6 @@ in {
   programs.home-manager.enable = true;
 
   programs = {
-    git = (import ./modules/git/git.nix { inherit pkgs; });
     direnv = (import ./modules/direnv.nix { inherit pkgs; });
     zsh = (import ./modules/zsh.nix { inherit pkgs; });
     fzf = (import ./modules/fzf.nix { inherit pkgs; });
@@ -33,11 +32,11 @@ in {
   home.sessionVariables.DIRENV_LOG_FORMAT="";
 
   imports = [
+    ./modules/git/git.nix
     ./modules/guake.nix
   ];
 
   home.packages = with pkgs; [
-    gitIdentity
     tmate
     nix-output-monitor
     _1password-gui
