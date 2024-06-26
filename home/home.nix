@@ -45,5 +45,7 @@
     neovim
     brave
     firefox-devedition
+    jdk22
+    vscodium
   ];
 }
