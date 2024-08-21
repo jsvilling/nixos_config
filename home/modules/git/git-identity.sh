@@ -15,7 +15,7 @@ git config user.name "$(git config user.${ID}.name)"
 git config user.email "$(git config user.${ID}.email)"
 git config gpg.format "$(git config user.${ID}.gpgformat)"
 git config commit.gpgsign "$(git config user.${ID}.gpgsign)"
-git config commit.signingkey "$(git config user.${ID}.signingkey)"
+git config user.signingkey "$(git config user.${ID}.signingkey)"
 
 echo "Name: $(git config user.name)"
 echo "Email: $(git config user.email)"
