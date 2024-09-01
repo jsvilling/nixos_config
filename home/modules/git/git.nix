@@ -18,6 +18,10 @@ in {
                     name = "Joshua Villing";
                     email = "jsvilling@gmail.com";
                 };
+                ipt = {
+                    name = "Joshua Villing";
+                    email = "joshua.villing@ipt.ch";
+                };                
             };
         };
 
