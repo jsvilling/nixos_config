@@ -14,17 +14,9 @@ in {
             core.editor = "vim";
             
             user = {
-                vlot = {
-                    name = "Joshua Villing";
-                    email = "joshua.villing@vlot.ch";
-                    gpgsign = true;
-                    gpgformat = "ssh";
-                    signingkey = "~/.ssh/id_signedVlot.pub";
-                };
                 priv = {
                     name = "Joshua Villing";
                     email = "jsvilling@gmail.com";
-                    gpgsign = false;
                 };
             };
         };
