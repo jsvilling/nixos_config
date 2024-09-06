@@ -24,7 +24,6 @@
     bat
     htop
     spotify
-
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rider
     jetbrains.datagrip
@@ -47,5 +46,9 @@
     firefox-devedition
     jdk22
     vscodium
+    clamtk
+    clamav
+    apparmor-pam
+    chkrootkit
   ];
 }
