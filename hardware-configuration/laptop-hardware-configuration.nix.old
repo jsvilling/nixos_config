@@ -14,17 +14,19 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3306fe96-8255-4972-898a-75f1f16cbb3e";
+    { device = "/dev/disk/by-uuid/02617b00-ca07-45dd-b2da-e9d0023f81cb";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-b6ebc101-8d38-4cc1-9914-944fe2a66a53".device = "/dev/disk/by-uuid/b6ebc101-8d38-4cc1-9914-944fe2a66a53";
-
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/90AE-98B4";
+    { device = "/dev/disk/by-uuid/2CDE-59D8";
       fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
     };
+
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.desktop.peripherals.touchpad]
+    click-method='default'
+    '';
 
   swapDevices = [ ];
 
@@ -36,12 +38,8 @@
   # networking.interfaces.wlp59s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-<<<<<<< HEAD
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   networking.hostName = "nixos-laptop";
-=======
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
->>>>>>> eb465c8 (ipt setup)
 }

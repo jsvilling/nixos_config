@@ -7,41 +7,40 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      # HW Import is done based on host in t 
+      ./hardware-configuration.nix
     ];
 
   # Bootloader.
-  
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub.enable = true;
-    grub.device = "nodev";
-    grub.useOSProber = true;
-    grub.efiSupport = true;
-  };
-  
-  #boot.loader.systemd-boot.enable = true;
-  
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Power
-  powerManagement.enable = true;
-
-  # Nix stuff
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Zurich";
+  time.timeZone = "Europe/Berlin";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -51,23 +50,15 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "ch";
-    xkbVariant = "de_nodeadkeys";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
-
-  # Configure console keymap
-  console.keyMap = "sg";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Wifi
-  hardware.enableRedistributableFirmware = true;
-  hardware.firmware = [ pkgs.wireless-regdb ];
-
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -87,61 +78,25 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-<<<<<<< HEAD
   users.users.joshua = {
     isNormalUser = true;
-    description = "Joshua";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
+    description = "Joshua Villing";
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      docker-compose
     #  thunderbird
     ];
   };
 
-  programs.zsh.enable = true;
-  
-=======
-  users.users = {
-
-    joshua = {
-      isNormalUser = true;
-      description = "Joshua";
-      extraGroups = [ "networkmanager" "wheel" "docker"];
-      shell = pkgs.zsh;
-      packages = with pkgs; [
-        firefox
-        docker-compose
-      #  thunderbird
-      ];
-    };
-
-    joshua-ipt = {
-      isNormalUser = true;
-      description = "Joshua ipt";
-      extraGroups = [ "networkmanager" "wheel" "docker"];
-      shell = pkgs.zsh;
-      packages = with pkgs; [];
-    };
-  };
-
-  programs.zsh.enable = true;
-  programs.ssh.startAgent = true;
->>>>>>> eb465c8 (ipt setup)
-  virtualisation.docker.enable = true;
-
-  virtualisation.libvirtd.enable = true;
-  programs.dconf.enable = true; # virt-manager requires dconf to remember settings
-
-
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = false;
+  services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "joshua";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -149,8 +104,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      virt-manager
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
 
@@ -179,6 +133,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
