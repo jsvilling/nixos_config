@@ -31,15 +31,10 @@
     };
     xserver = {
       enable = true;
-      displayManager = {
-        gdm.enable = true;
-        autoLogin.enable = false;
-        autoLogin.user = "joshua";
-      };
-
+      displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      layout = "ch";
-      xkbVariant = "de_nodeadkeys";
+      xkb.layout = "ch";
+      xkb.variant = "de_nodeadkeys";
     };
   };
 

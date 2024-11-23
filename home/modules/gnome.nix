@@ -8,7 +8,7 @@
   };
 
   home.packages = with pkgs; [
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.focus-follows-workspace
   ];
 }
