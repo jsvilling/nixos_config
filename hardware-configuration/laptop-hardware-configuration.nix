@@ -26,6 +26,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.desktop.peripherals.touchpad]
+    click-method='default'
+    '';
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -53,5 +53,5 @@
     iptables
     nil
     nixpkgs-fmt
-   ];
+  ];
 }
