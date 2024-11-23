@@ -23,7 +23,6 @@
     htop
     unstable.jetbrains.idea-ultimate
     google-chrome
-    jdk22
     vscodium
     clamtk
     clamav
