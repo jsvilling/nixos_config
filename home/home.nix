@@ -26,7 +26,6 @@
     spotify
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rider
-    jetbrains.datagrip
     google-chrome
     (import ./teams-pwa pkgs).google-chrome
     discord
@@ -44,7 +43,6 @@
     neovim
     brave
     firefox-devedition
-    jdk22
     vscodium
     clamtk
     clamav
