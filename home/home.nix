@@ -51,5 +51,7 @@
     apparmor-pam
     chkrootkit
     iptables
+    nil
+    nixpkgs-fmt
    ];
 }
