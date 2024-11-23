@@ -1,6 +1,4 @@
 {
-  description = "A very basic flake";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";  
@@ -8,13 +6,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-
   outputs = inputs@{ nixpkgs, nixpkgs-unstable, home-manager, ... }: 
     let 
       system = "x86_64-linux";
       overlay-unstable = final: prev: {
-        # unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-        # use this variant if unfree packages are needed:
          unstable = import nixpkgs-unstable {
            inherit system;
            config.allowUnfree = true;
@@ -38,9 +33,6 @@
             home-manager.useUserPackages = true;
             home-manager.users.joshua = import ./home/home.nix;
             home-manager.users.joshua-ipt = import ./home/home-ipt.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
           }
         ];
       };
