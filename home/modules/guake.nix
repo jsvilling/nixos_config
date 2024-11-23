@@ -13,30 +13,30 @@
     };
 
     "org/guake/keybindings/global" = {
-        show-hide = "F12";
+      show-hide = "F12";
     };
 
     "org/guake/keybindings/local" = {
-        toggle-fullscreen = "F11";
+      toggle-fullscreen = "F11";
 
-        clipboard-copy = "<Control><Shift>c";
-        clipboard-paste = "<Control><Shift>v";
+      clipboard-copy = "<Control><Shift>c";
+      clipboard-paste = "<Control><Shift>v";
 
-        # In tab navigation
-        focus-terminal-down = "<Alt>Down";
-        focus-terminal-left = "<Alt>Left";
-        focus-terminal-right = "<Alt>Right";
-        focus-terminal-up = "<Alt>Up";
+      # In tab navigation
+      focus-terminal-down = "<Alt>Down";
+      focus-terminal-left = "<Alt>Left";
+      focus-terminal-right = "<Alt>Right";
+      focus-terminal-up = "<Alt>Up";
 
-        # Between tabs navigation
-        next-tab = "<Control>Right";
-        previous-tab = "<Control>Left";
+      # Between tabs navigation
+      next-tab = "<Control>Right";
+      previous-tab = "<Control>Left";
 
-        # Open new
-        new-tab = "<Control><Shift>t";
-        split-tab-horizontal = "<Shift>Down";
-        split-tab-vertical = "<Shift>Right";
-    };    
+      # Open new
+      new-tab = "<Control><Shift>t";
+      split-tab-horizontal = "<Shift>Down";
+      split-tab-vertical = "<Shift>Right";
+    };
   };
 
   home.packages = with pkgs; [
