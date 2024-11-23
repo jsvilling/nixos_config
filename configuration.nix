@@ -53,26 +53,6 @@
 
   security.rtkit.enable = true;
 
-<<<<<<< HEAD
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-<<<<<<< HEAD
-  users.users.joshua = {
-    isNormalUser = true;
-    description = "Joshua";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-      firefox
-      docker-compose
-    #  thunderbird
-    ];
-  };
-
-  programs.zsh.enable = true;
-  
-=======
-=======
->>>>>>> 3429a9c (Formatting)
   users.users = {
     joshua = {
       isNormalUser = true;
@@ -96,18 +76,12 @@
     };
   };
 
-<<<<<<< HEAD
-  programs.zsh.enable = true;
-  programs.ssh.startAgent = true;
->>>>>>> eb465c8 (ipt setup)
-=======
   programs = {
     dconf.enable = true;
     ssh.startAgent = true;
     zsh.enable = true;
   };
 
->>>>>>> 3429a9c (Formatting)
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
 
