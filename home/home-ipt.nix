@@ -2,10 +2,6 @@
 
 {
   programs.home-manager.enable = true;
-  home.stateVersion = "23.05";
-
-  home.username = "joshua-ipt";
-  home.homeDirectory = "/home/joshua-ipt";
 
   imports = [
     ./modules/direnv.nix
@@ -17,17 +13,23 @@
     ./modules/zsh.nix
   ];
 
-  home.packages = with pkgs; [
-    nix-output-monitor
-    _1password-gui
-    htop
-    unstable.jetbrains.idea-ultimate
-    google-chrome
-    vscodium
-    clamtk
-    clamav
-    apparmor-pam
-    chkrootkit
-    iptables
-   ];
+  home = {
+    stateVersion = "23.05";
+    username = "joshua-ipt";
+    homeDirectory = "/home/joshua-ipt";
+
+    packages = with pkgs; [
+      nix-output-monitor
+      _1password-gui
+      htop
+      unstable.jetbrains.idea-ultimate
+      google-chrome
+      vscodium
+      clamtk
+      clamav
+      apparmor-pam
+      chkrootkit
+      iptables
+    ];
+  };
 }

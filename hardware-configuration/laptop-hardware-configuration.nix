@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
@@ -14,14 +15,16 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3306fe96-8255-4972-898a-75f1f16cbb3e";
+    {
+      device = "/dev/disk/by-uuid/3306fe96-8255-4972-898a-75f1f16cbb3e";
       fsType = "ext4";
     };
 
   boot.initrd.luks.devices."luks-b6ebc101-8d38-4cc1-9914-944fe2a66a53".device = "/dev/disk/by-uuid/b6ebc101-8d38-4cc1-9914-944fe2a66a53";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/90AE-98B4";
+    {
+      device = "/dev/disk/by-uuid/90AE-98B4";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
@@ -29,7 +32,7 @@
   services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
     [org.gnome.desktop.peripherals.touchpad]
     click-method='default'
-    '';
+  '';
 
   swapDevices = [ ];
 
