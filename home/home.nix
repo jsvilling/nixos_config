@@ -26,7 +26,7 @@
       htop
       spotify
       unstable.jetbrains.idea-ultimate
-      unstable.jetbrains.rider
+      jetbrains.rider
       google-chrome
       (import ./teams-pwa pkgs).google-chrome
       discord
@@ -52,6 +52,7 @@
       iptables
       nil
       nixpkgs-fmt
+      dotnet-sdk_8
     ];
   };
 }
