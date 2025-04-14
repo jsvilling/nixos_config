@@ -25,7 +25,6 @@
 
       fonts.packages = with pkgs; [
         powerline-fonts
-        recursive
         nerd-fonts.jetbrains-mono
       ];
 
@@ -36,7 +35,6 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 6;
 
-      # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
   in
