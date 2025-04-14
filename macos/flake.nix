@@ -23,7 +23,6 @@
       nix.settings.experimental-features = "nix-command flakes";
       nixpkgs.config.allowUnfree = true;
 
-      fonts.enableFontDir = true;
       fonts.packages = with pkgs; [
         powerline-fonts
         recursive
