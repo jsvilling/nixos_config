@@ -12,8 +12,7 @@
   outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
-      environment.systemPackages =
-       [ pkgs.git ];
+      environment.systemPackages = [ pkgs.git ];
    
       users.users.joshua-ipt = {
         home = /Users/joshua-ipt;
