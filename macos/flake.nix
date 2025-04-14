@@ -26,7 +26,7 @@
       fonts.packages = with pkgs; [
         powerline-fonts
         recursive
-        #(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        nerd-fonts.jetbrains-mono
       ];
 
       # Set Git commit hash for darwin-version.
