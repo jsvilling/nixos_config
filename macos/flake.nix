@@ -13,7 +13,6 @@
   let
     configuration = { pkgs, ... }: {
       environment.systemPackages = [
-        pkgs.powerline-fonts
       ];
    
       users.users.joshua-ipt = {
@@ -22,6 +21,7 @@
 
       nix.enable = false;
       nix.settings.experimental-features = "nix-command flakes";
+      nixpkgs.config.allowUnfree = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;

@@ -71,5 +71,6 @@
     nix-output-monitor
     spotify
     nixpkgs-fmt
+    powerline-fonts
   ];
 }
