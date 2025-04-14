@@ -64,6 +64,15 @@
           };
         };
       };
+
+      wezterm = {
+        enable = true;
+        enableZshIntegration = true;
+
+        extraConfig = {
+          config.color_scheme = "AdventureTime";
+        };
+      };
   };
 
   home.packages = with pkgs; [
