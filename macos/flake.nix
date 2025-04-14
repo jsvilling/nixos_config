@@ -23,6 +23,13 @@
       nix.settings.experimental-features = "nix-command flakes";
       nixpkgs.config.allowUnfree = true;
 
+      fonts.enableFontDir = true;
+      fonts.fonts = with pkgs; [
+        powerline-fonts
+        recursive
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      ];
+
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
 
