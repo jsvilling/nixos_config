@@ -67,7 +67,9 @@
   };
 
   home.packages = with pkgs; [
-    cmatrix
     htop
+    nix-output-monitor
+    spotify
+    nixpkgs-fmt
   ];
 }

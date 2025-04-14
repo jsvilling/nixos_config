@@ -12,7 +12,9 @@
   outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs }:
   let
     configuration = { pkgs, ... }: {
-      environment.systemPackages = [ ];
+      environment.systemPackages = [
+        pkgs.powerline-fonts
+      ];
    
       users.users.joshua-ipt = {
         home = /Users/joshua-ipt;
