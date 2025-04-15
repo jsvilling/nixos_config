@@ -72,9 +72,64 @@
           local wezterm = require 'wezterm'
           local config = wezterm.config_builder()
           
+          -- Appearance
           config.color_scheme = 'Catppuccin Mocha (Gogh)'
-          config.window_background_opacity = 0.5
+          config.window_background_opacity = 0.85
           
+          -- Keybindings
+          config.keys = {
+             -- Panes
+            {
+              key = 'RightArrow',
+              mods = 'ALT|SHIFT',
+              action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+            },
+            {
+              key = 'DownArrow',
+              mods = 'ALT|SHIFT',
+              action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+            },
+            {
+              key = 'LeftArrow',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Left',
+            },
+            {
+              key = 'RightArrow',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Right',
+            },
+            {
+              key = 'UpArrow',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Up',
+            },
+            {
+              key = 'DownArrow',
+              mods = 'ALT',
+              action = wezterm.action.ActivatePaneDirection 'Down',
+            },
+            {
+              key = 'w',
+              mods = 'ALT',
+              action = wezterm.action.CloseCurrentPane { confirm = true },
+            },
+
+            -- Tabs
+            { key = 'LeftArrow', mods = 'SUPER', action = wezterm.action.ActivateTabRelative(-1) },
+            { key = 'RightArrow', mods = 'SUPER', action = wezterm.action.ActivateTabRelative(1) },
+            {
+              key = 't',
+              mods = 'CTRL',
+              action = wezterm.action.SpawnTab 'CurrentPaneDomain',
+            },
+            {
+              key = 'w',
+              mods = 'CTRL',
+              action = wezterm.action.CloseCurrentTab { confirm = true },
+            },
+          }
+
           return config
         ";
       };
