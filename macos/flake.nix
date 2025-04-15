@@ -9,7 +9,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, home-manager, nixpkgs, config }:
   let
     configuration = { pkgs, ... }: {
       environment.systemPackages = [
