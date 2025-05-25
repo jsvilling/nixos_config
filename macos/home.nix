@@ -276,5 +276,7 @@
     nixpkgs-fmt
     powerline-fonts
     cowsay
+    cmatrix
+    jetbrains.idea-ultimate
   ];
 }
