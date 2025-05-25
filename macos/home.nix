@@ -271,12 +271,11 @@
 
   home.packages = with pkgs; [
     htop
-    btop
     nix-output-monitor
     spotify
     nixpkgs-fmt
     powerline-fonts
-    cowsay
     jetbrains.idea-ultimate
+    iterm2
   ];
 }
