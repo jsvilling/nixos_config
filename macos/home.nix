@@ -277,5 +277,8 @@
     powerline-fonts
     jetbrains.idea-ultimate
     iterm2
+    cowsay
+    btop
+    neofetch
   ];
 }
