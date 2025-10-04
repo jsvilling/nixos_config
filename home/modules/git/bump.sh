@@ -4,6 +4,6 @@ newNum=$(($num + 1))
 branchName=${currentBranch/$num/$newNum}
 git checkout -b $branchName
 git rebase HEAD~50 --autosquash
-git fetch vlot
-git rebase vlot/master
+git fetch --all
+git rebase origin/develop
 git push

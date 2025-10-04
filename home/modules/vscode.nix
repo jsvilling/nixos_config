@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+
+home.packages = with pkgs; [
+  nil
+  nixpkgs-fmt
+];
+
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -13,6 +19,7 @@
       justusadam.language-haskell
       mkhl.direnv
     ];
+
     userSettings = {
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
