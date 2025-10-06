@@ -14,29 +14,20 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
 
-      homeConfigurations = {
-        joshua = home-manager.lib.homeManagerConfiguration {
+      usernames = [ "joshua" "joshua-ipt" ];
+
+      mkUserHome = username: {
+        name = username;
+        value = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-
           modules = [ ./home.nix ];
-          extraSpecialArgs = {
-            username = "joshua";
-          };
-        };
-
-        joshua-ipt = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [ ./home.nix ];
-          extraSpecialArgs = {
-            username = "joshua-ipt";
-          };
+          extraSpecialArgs = { inherit username; };
         };
       };
 
-
+    in
+    {
+      homeConfigurations = builtins.listToAttrs (map mkUserHome usernames);
     };
 }
