@@ -21,6 +21,7 @@ home.packages = with pkgs; [
     ];
 
     userSettings = {
+      "editor.formatOnSave" = true;
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
       "nix.serverSettings" = {

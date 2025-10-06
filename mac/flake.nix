@@ -16,13 +16,27 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      homeConfigurations."joshua" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
 
-        modules = [ ./home.nix ];
-        extraSpecialArgs = {
-          username = "joshua";
+      homeConfigurations = {
+        joshua = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [ ./home.nix ];
+          extraSpecialArgs = {
+            username = "joshua";
+          };
+        };
+
+        joshua-ipt = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [ ./home.nix ];
+          extraSpecialArgs = {
+            username = "joshua-ipt";
+          };
         };
       };
+
+
     };
 }

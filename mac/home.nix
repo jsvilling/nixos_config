@@ -2,7 +2,7 @@
 
 {
   home.username = username;
-  home.homeDirectory = "/Users/joshua";
+  home.homeDirectory = "/Users/${username}";
   home.stateVersion = "25.05";
 
   imports = [
