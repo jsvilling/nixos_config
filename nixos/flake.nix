@@ -33,7 +33,6 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.joshua = import ../home/home.nix;
-              home-manager.users.joshua-ipt = import ../home/home-ipt.nix;
             }
           ];
         };
