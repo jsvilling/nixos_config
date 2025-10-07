@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    powerline-fonts
+  ];
+
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;

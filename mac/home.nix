@@ -1,0 +1,17 @@
+{ config, pkgs, username, ... }:
+
+{
+  home.username = username;
+  home.homeDirectory = "/Users/${username}";
+  home.stateVersion = "25.05";
+
+  imports = [
+    ../home/modules/iterm/iterm.nix
+    ../home/modules/shared.nix
+  ];
+
+  home.packages = with pkgs; [
+  ];
+
+  programs.home-manager.enable = true;
+}

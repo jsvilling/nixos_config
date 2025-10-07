@@ -14,6 +14,10 @@ in
       push.autoSetupRemote = true;
       core.editor = "vim";
 
+      safe = {
+        directory = "/Users/joshua-ipt/.nix";
+      };
+
       user = {
         priv = {
           name = "Joshua Villing";
