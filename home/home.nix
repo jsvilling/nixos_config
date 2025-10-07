@@ -25,7 +25,7 @@
       bat
       htop
       spotify
-      unstable.jetbrains.idea-ultimate
+      jetbrains.idea-ultimate
       jetbrains.rider
       google-chrome
       (import ./teams-pwa pkgs).google-chrome
@@ -38,8 +38,6 @@
       gimp
       killall
       unstable.linux-firmware
-      unstable.obsidian
-      unstable.terraform
       chromium
       neovim
       brave
