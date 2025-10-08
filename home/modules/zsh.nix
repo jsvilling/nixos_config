@@ -15,5 +15,18 @@
       plugins = [ "git" ];
       theme = "agnoster";
     };
+
+    initExtra = ''
+      bindkey -e
+
+      # Define a ZLE (Zsh Line Editor) widget to run lazygit
+      lazygit-widget() {
+        lazygit                       
+        zle reset-prompt              
+      }
+
+      zle -N lazygit-widget           
+      bindkey '^G' lazygit-widget     
+    '';
   };
 }
