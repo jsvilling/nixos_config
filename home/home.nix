@@ -39,7 +39,6 @@
       killall
       unstable.linux-firmware
       chromium
-      neovim
       brave
       firefox-devedition
       vscodium

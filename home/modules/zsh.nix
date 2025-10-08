@@ -16,7 +16,7 @@
       theme = "agnoster";
     };
 
-    initExtra = ''
+    initContent = ''
       bindkey -e
 
       # Define a ZLE (Zsh Line Editor) widget to run lazygit
