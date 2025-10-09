@@ -12,12 +12,13 @@
 
     plugins = with pkgs.vimPlugins; [
       which-key-nvim
+      nvim-tree-lua
     ];
 
   };
 
   xdg.configFile."nvim" = {
-    source = ./cfg/lua;
+    source = ./cfg;
     recursive = true;
   };
 }
