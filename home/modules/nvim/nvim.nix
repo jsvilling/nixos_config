@@ -13,9 +13,10 @@
     plugins = with pkgs.vimPlugins; [
     ];
 
-    xdg.configFile."nvim" = {
-      source = ./cfg;
-      recursive = true;
-    };
+  };
+
+  xdg.configFile."nvim" = {
+    source = ./lua;
+    recursive = true;
   };
 }
