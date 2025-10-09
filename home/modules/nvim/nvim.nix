@@ -6,12 +6,16 @@
 
   programs.neovim = {
 
+    enable = true;
+    #package = pkgs.neovim;
+    extraPackages = with pkgs; [ ripgrep fd ];
+
     plugins = with pkgs.vimPlugins; [
     ];
 
-
-    extraConfig = ''
-      
-    '';
+    xdg.configFile."nvim" = {
+      source = ./cfg;
+      recursive = true;
+    };
   };
 }
