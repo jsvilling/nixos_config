@@ -11,12 +11,13 @@
     extraPackages = with pkgs; [ ripgrep fd ];
 
     plugins = with pkgs.vimPlugins; [
+      which-key-nvim
     ];
 
   };
 
   xdg.configFile."nvim" = {
-    source = ./lua;
+    source = ./cfg/lua;
     recursive = true;
   };
 }
