@@ -12,6 +12,7 @@
 
     plugins = with pkgs.vimPlugins; [
       rose-pine
+      which-key-nvim
     ];
 
   };
