@@ -11,8 +11,6 @@ rose.setup({
 
 vim.cmd("colorscheme rose-pine")
 
-
-
 ----------------------
 -- Which key
 ----------------------
@@ -23,21 +21,12 @@ if not ok then
   return
 end
 
--- small debug, remove later
-vim.notify("which-key: config running")
-print ("Hello nvim2")
-
-which_key.setup({}) -- default setup
+which_key.setup({})
 
 which_key.register({
-  f = { '<cmd>echo "demo find"<cr>', 'Demo: find' },
-  t = { '<cmd>echo "demo test"<cr>', 'Demo: test' },
+  --f = { '<cmd>echo "demo find"<cr>', 'Demo: find' },
 }, { prefix = "<leader>" })
-
-
-vim.keymap.set("n", "<leader>x", function() print("hi") end) 
-
-
+--vim.keymap.set("n", "<leader>x", function() print("hi") end, { desc = "Hi" }) 
 
 ----------------------
 -- Telescope
@@ -57,4 +46,4 @@ end
 telescope.setup({})
 
 -- Keymap: Space + p to open file picker
-vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "Find files" })
+vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "Find files" })
