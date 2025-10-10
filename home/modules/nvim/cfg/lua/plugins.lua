@@ -42,8 +42,16 @@ if not ok2 then
   vim.notify("telescope.builtin not available", vim.log.levels.WARN)
   return
 end
-
 telescope.setup({})
-
--- Keymap: Space + p to open file picker
 vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "Find files" })
+
+
+----------------------
+-- Lazygit
+----------------------
+local ok, lazygit = pcall(require, "lazygit")
+if not ok then
+  vim.notify("lazygit.nvim not available", vim.log.levels.WARN)
+  return
+end
+vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<CR>', { desc = "Open LazyGit" })

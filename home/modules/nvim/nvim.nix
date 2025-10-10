@@ -15,6 +15,7 @@
       which-key-nvim
       telescope-nvim
       plenary-nvim
+      lazygit-nvim
     ];
 
   };
