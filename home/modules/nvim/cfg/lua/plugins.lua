@@ -43,7 +43,7 @@ if not ok2 then
   return
 end
 telescope.setup({})
-vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "Find files" })
+vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "Telescope" })
 
 
 ----------------------
@@ -54,4 +54,4 @@ if not ok then
   vim.notify("lazygit.nvim not available", vim.log.levels.WARN)
   return
 end
-vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<CR>', { desc = "Open LazyGit" })
+vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<CR>', { desc = "LazyGit" })
