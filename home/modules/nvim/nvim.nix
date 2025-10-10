@@ -11,8 +11,7 @@
     extraPackages = with pkgs; [ ripgrep fd ];
 
     plugins = with pkgs.vimPlugins; [
-      which-key-nvim
-      nvim-tree-lua
+      rose-pine
     ];
 
   };
