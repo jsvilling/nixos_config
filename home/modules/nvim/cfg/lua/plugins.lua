@@ -21,6 +21,9 @@ nvim_tree.setup({
   },
 })
 
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+print("filetree keymap set")
+
 -- Which key
 
 local ok, which_key = pcall(require, "which-key")
