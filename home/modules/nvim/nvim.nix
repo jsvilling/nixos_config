@@ -13,6 +13,8 @@
     plugins = with pkgs.vimPlugins; [
       rose-pine
       which-key-nvim
+      telescope-nvim
+      plenary-nvim
     ];
 
   };

@@ -42,3 +42,19 @@ vim.keymap.set("n", "<leader>x", function() print("hi") end)
 ----------------------
 -- Telescope
 ----------------------
+local ok, telescope = pcall(require, "telescope")
+if not ok then
+  vim.notify("telescope not available", vim.log.levels.WARN)
+  return
+end
+
+local ok2, builtin = pcall(require, "telescope.builtin")
+if not ok2 then
+  vim.notify("telescope.builtin not available", vim.log.levels.WARN)
+  return
+end
+
+telescope.setup({})
+
+-- Keymap: Space + p to open file picker
+vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "Find files" })
