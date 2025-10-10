@@ -44,7 +44,7 @@ if not ok2 then
 end
 telescope.setup({})
 vim.keymap.set("n", "<leader>t", builtin.find_files, { desc = "Telescope" })
-
+vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "Search" })
 
 ----------------------
 -- Lazygit
