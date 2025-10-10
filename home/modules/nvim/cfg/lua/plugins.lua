@@ -55,3 +55,21 @@ if not ok then
   return
 end
 vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<CR>', { desc = "LazyGit" })
+
+---
+--- Treesitter
+---
+local ok, ts = pcall(require, "nvim-treesitter.configs")
+if not ok then
+  vim.notify("nvim-treesitter not available", vim.log.levels.WARN)
+  return
+end
+
+ts.setup({
+  highlight = {
+    enable = true,                      -- enable syntax highlighting
+    additional_vim_regex_highlighting = false,
+  },
+  indent = { enable = true },           -- smarter indentation
+})
+

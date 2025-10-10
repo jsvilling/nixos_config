@@ -16,6 +16,10 @@
       telescope-nvim
       plenary-nvim
       lazygit-nvim
+      (nvim-treesitter.withPlugins (p: with p; [
+        lua
+        nix
+      ]))
     ];
 
   };
