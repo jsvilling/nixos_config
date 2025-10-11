@@ -9,6 +9,7 @@
     ./modules/git/git.nix
     ./modules/guake.nix
     ./modules/gnome.nix
+    ./modules/nvim/nvim.nix
     ./modules/vscode.nix
     ./modules/zsh.nix
   ];
