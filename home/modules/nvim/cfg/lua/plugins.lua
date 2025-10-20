@@ -23,11 +23,6 @@ end
 
 which_key.setup({})
 
-which_key.register({
-  --f = { '<cmd>echo "demo find"<cr>', 'Demo: find' },
-}, { prefix = "<leader>" })
---vim.keymap.set("n", "<leader>x", function() print("hi") end, { desc = "Hi" }) 
-
 ----------------------
 -- Telescope
 ----------------------

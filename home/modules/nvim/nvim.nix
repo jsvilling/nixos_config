@@ -13,6 +13,8 @@
     plugins = with pkgs.vimPlugins; [
       rose-pine
       which-key-nvim
+      mini-icons
+      nvim-web-devicons
       telescope-nvim
       plenary-nvim
       lazygit-nvim
