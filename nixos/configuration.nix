@@ -92,6 +92,7 @@
   environment.systemPackages = with pkgs; [
     vim
     virt-manager
+    qmk
   ];
 
   # This value determines the NixOS release from which the default
