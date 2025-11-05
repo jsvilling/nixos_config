@@ -27,6 +27,7 @@
 
       zle -N lazygit-widget           
       bindkey '^X' lazygit-widget     
+      bindkey '^[G' lazygit-widget
     '';
   };
 }
