@@ -15,12 +15,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.config.permittedInsecurePackages = [
-                "dotnet-sdk-wrapped-7.0.410"
-                "dotnet-sdk-7.0.410"
-              ];
-
-
   networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Zurich";
