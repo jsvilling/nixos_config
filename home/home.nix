@@ -50,7 +50,6 @@
       iptables
       nil
       nixpkgs-fmt
-      dotnet-sdk_8
       qmk_hid
     ];
   };
