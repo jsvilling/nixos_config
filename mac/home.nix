@@ -11,7 +11,13 @@
   ];
 
   home.packages = with pkgs; [
+    podman
+    podman-compose
   ];
+
+  home.sessionVariables = {
+    DOCKER_HOST = "unix:///Users/${builtins.getEnv "USER"}/.local/share/podman/podman.sock";
+  };
 
   programs.home-manager.enable = true;
 }
