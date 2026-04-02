@@ -43,5 +43,6 @@ in
     gitIdentity
     gitBump
     gitPr
+    lazygit
   ];
 }

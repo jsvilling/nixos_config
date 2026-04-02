@@ -23,7 +23,6 @@
       tmate
       nix-output-monitor
       _1password-gui
-      bat
       htop
       spotify
       jetbrains.idea-ultimate
@@ -46,7 +45,6 @@
       clamtk
       clamav
       apparmor-pam
-      chkrootkit
       iptables
       nil
       nixpkgs-fmt
