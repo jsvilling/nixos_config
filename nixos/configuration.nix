@@ -33,6 +33,7 @@
       enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
+      #defaultSession = "hyprland";
       xkb.layout = "ch";
       xkb.variant = "de_nodeadkeys";
     };
@@ -73,7 +74,9 @@
 
   programs = {
     dconf.enable = true;
-    #ssh.startAgent = true;
+    hyprland = {
+      enable = true;
+    };
     zsh.enable = true;
   };
 
@@ -84,6 +87,11 @@
   systemd.services."autovt@tty1".enable = false;
 
   environment.systemPackages = with pkgs; [
+    hyprland
+    kitty
+    waybar
+    wofi
+    nwg-look
     vim
     virt-manager
     qmk
