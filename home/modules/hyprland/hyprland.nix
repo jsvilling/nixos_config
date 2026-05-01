@@ -5,7 +5,10 @@ let
   waybarSrc = ./waybar;
 in {
   home.file = {
-    ".config/hypr/hyprland.conf".source = hyprLandSrc;
+    ".config/hypr/hyprland.conf" = {
+      source = hyprLandSrc;
+      recursive = true;
+    };
     ".config/waybar" = {
       source = waybarSrc;
       recursive = true;
@@ -15,8 +18,8 @@ in {
     kitty
     waybar
     wofi
-    dmenu
     nwg-look
     hyprpaper
+    dunst
   ];
 }
