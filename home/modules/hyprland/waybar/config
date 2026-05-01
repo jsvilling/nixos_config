@@ -1,11 +1,16 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 32,
+
+  "height": 27, // Waybar height (to be removed for auto height)
+  "margin-top": 3,
+  "margin-left": 10,
+  "margin-bottom": 0,
+  "margin-right": 10,
 
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock", "tray"],
-  "modules-right": ["network", "cpu", "memory"],
+  "modules-center": ["clock"],
+  "modules-right": ["network", "cpu", "temperature", "memory", "tray", "pulseaudio" ],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -28,11 +33,27 @@
   },
 
   "memory": {
-    "format": "🐏  {used}MB"
+    "format": "🐏 {used}MB"
   },
 
   "tray": {
     "spacing": 10,
     "icon-size": 16
+  },
+  
+  "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "  {volume}%",
+      "format-bluetooth-muted": "婢 ",
+      "format-muted": "婢",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
   }
 }
