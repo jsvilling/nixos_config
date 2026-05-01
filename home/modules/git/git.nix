@@ -10,7 +10,7 @@ in
   programs.git = {
     enable = true;
 
-    extraConfig = {
+    settings = {
       push.autoSetupRemote = true;
       core.editor = "vim";
 
@@ -28,14 +28,14 @@ in
           email = "joshua.villing@ipt.ch";
         };
       };
-    };
 
-    aliases = {
-      wip = "commit -a -m 'fixup! wip'";
-      fup = "rebase HEAD~50 --autosquash";
-      bump = "! git bump";
-      pr = "! git-pr";
-      id = "! git-identity";
+      aliases = {
+       wip = "commit -a -m 'fixup! wip'";
+        fup = "rebase HEAD~50 --autosquash";
+        bump = "! git bump";
+        pr = "! git-pr";
+        id = "! git-identity";
+      };
     };
   };
 

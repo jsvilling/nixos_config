@@ -26,7 +26,7 @@
       _1password-gui
       htop
       spotify
-      jetbrains.idea-ultimate
+      jetbrains.idea
       jetbrains.rider
       google-chrome
       (import ./teams-pwa pkgs).google-chrome

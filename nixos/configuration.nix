@@ -29,10 +29,10 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       #defaultSession = "hyprland";
       xkb.layout = "ch";
       xkb.variant = "de_nodeadkeys";
@@ -44,7 +44,6 @@
   hardware = {
     enableRedistributableFirmware = true;
     firmware = [ pkgs.wireless-regdb ];
-    pulseaudio.enable = false;
   };
 
   security.rtkit.enable = true;
