@@ -7,7 +7,6 @@
   programs.neovim = {
 
     enable = true;
-    #package = pkgs.neovim;
     extraPackages = with pkgs; [ ripgrep fd ];
 
     plugins = with pkgs.vimPlugins; [
@@ -22,6 +21,7 @@
         lua
         nix
       ]))
+      neo-tree-nvim
     ];
 
   };

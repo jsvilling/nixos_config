@@ -1,4 +1,4 @@
-----------------------
+---------------------
 -- Color Scheme
 ----------------------
 
@@ -51,9 +51,9 @@ if not ok then
 end
 vim.keymap.set('n', '<leader>g', '<cmd>LazyGit<CR>', { desc = "LazyGit" })
 
----
---- Treesitter
----
+----------------------
+-- Treesitter
+----------------------
 local ok, ts = pcall(require, "nvim-treesitter.configs")
 if not ok then
   vim.notify("nvim-treesitter not available", vim.log.levels.WARN)
@@ -68,3 +68,35 @@ ts.setup({
   indent = { enable = true },           -- smarter indentation
 })
 
+----------------------
+-- Neo  Tree
+----------------------
+
+require('neo-tree').setup({
+  window = {
+    mappings = {
+      ["esc"] = function() 
+        vim.cmd("wincmd r")
+      end,
+    }
+  },
+  filesystem = {
+    follow_current_file = { enabled = true },
+    filtered_items = { visible = true },
+  },
+  git_status = {
+    symbols = {
+      added = '✚', -- or "✚", but this is redundant info if you use git_status_colors on the name
+      modified = '', -- or "", but this is redundant info if you use git_status_colors on the name
+      deleted = '✖', -- this can only be used in the git_status source
+      renamed = '󰁕', -- this can only be used in the git_status source
+      untracked = '',
+      ignored = '',
+      unstaged = '󰄱',
+      staged = '',
+      conflict = '',
+    },
+  },
+})
+vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>', { desc = "Neo Tree" })
+vim.keymap.set('n', '<leader>r', '<cmd>Neotree<CR>', { desc = "Neo Tree" })
