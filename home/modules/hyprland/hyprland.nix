@@ -4,6 +4,7 @@ let
   hyprLandSrc = ./hyprland.conf;
   waybarSrc = ./waybar;
   paperSrc = ./hyprpaper;
+  wofiSrc = ./wofi;
 in {
   home.file = {
     ".config/hypr/hyprland.conf" = {
@@ -14,8 +15,12 @@ in {
       source = waybarSrc;
       recursive = true;
     };
-  ".config/hypr" = {
+    ".config/hypr" = {
       source = paperSrc;
+      recursive = true;
+    };
+    ".config/wofi" = {
+      source = wofiSrc;
       recursive = true;
     };
   };
