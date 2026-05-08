@@ -20,6 +20,7 @@ in {
     };
   };
   home.packages = with pkgs; [
+    rose-pine-hyprcursor
     kitty
     waybar
     wofi
