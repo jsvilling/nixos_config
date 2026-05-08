@@ -22,6 +22,7 @@
         nix
       ]))
       neo-tree-nvim
+      toggleterm-nvim
     ];
 
   };

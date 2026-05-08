@@ -100,3 +100,13 @@ require('neo-tree').setup({
 })
 vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>', { desc = "Neo Tree" })
 vim.keymap.set('n', '<leader>r', '<cmd>Neotree<CR>', { desc = "Neo Tree" })
+
+----------------------
+-- Toggleterm
+----------------------
+
+require('toggleterm').setup({
+  direction = "float",
+})
+vim.keymap.set("n", "<leader>p", "<cmd>ToggleTerm<CR>")
+vim.keymap.set("t", "<leader>p", "<cmd>ToggleTerm<CR>")
