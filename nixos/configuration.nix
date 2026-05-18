@@ -94,6 +94,7 @@
     vim
     virt-manager
     qmk
+    dotnetCorePackages.sdk_8_0
   ];
 
   # This value determines the NixOS release from which the default
