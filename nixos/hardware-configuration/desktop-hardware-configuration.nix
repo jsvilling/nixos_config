@@ -42,4 +42,7 @@
   hardware.keyboard.zsa.enable = true;
 
   networking.hostName = "nixos-desktop";
+
+  hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
 }
