@@ -3,6 +3,8 @@
 {
   programs.home-manager.enable = true;
 
+  nixpkgs.config.android_sdk.accept_license = true;
+
   imports = [
     ./modules/direnv.nix
     ./modules/fzf.nix
@@ -26,6 +28,7 @@
       _1password-gui
       htop
       spotify
+      unstable.jetbrains-toolbox
       jetbrains.idea
       jetbrains.rider
       google-chrome
