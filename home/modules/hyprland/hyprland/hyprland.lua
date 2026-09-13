@@ -1,0 +1,225 @@
+------------------
+---- MONITORS ----
+------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+hl.monitor({
+    output   = "",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "auto",
+})
+
+
+---------------------
+---- MY PROGRAMS ----
+---------------------
+
+-- Set programs that you use
+local terminal    = "kitty"
+local fileManager = "nautilus"
+local menu        = "wofi --show drun"
+
+-------------------
+---- AUTOSTART ----
+-------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Autostart/
+
+hl.on("hyprland.start", function () 
+   hl.exec_cmd("waybar & hyprpaper")
+end)
+
+-------------------------------
+---- ENVIRONMENT VARIABLES ----
+-------------------------------
+
+-- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
+
+hl.env("XCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_SIZE", "24")
+
+-----------------------
+---- LOOK AND FEEL ----
+-----------------------
+
+-- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+hl.config({
+    general = {
+        gaps_in  = 5,
+        gaps_out = 20,
+
+        border_size = 2,
+
+        col = {
+            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            inactive_border = "rgba(595959aa)",
+        },
+
+        resize_on_border = true,
+        allow_tearing = false,
+        layout = "dwindle",
+    },
+
+    decoration = {
+        rounding       = 10,
+        rounding_power = 2,
+
+        -- Change transparency of focused and unfocused windows
+        active_opacity   = 1.0,
+        inactive_opacity = 1.0,
+
+        shadow = {
+            enabled      = true,
+            range        = 4,
+            render_power = 3,
+            color        = 0xee1a1a1a,
+        },
+
+        blur = {
+            enabled   = true,
+            size      = 3,
+            passes    = 1,
+            vibrancy  = 0.1696,
+        },
+    },
+
+    animations = {
+        enabled = true,
+    },
+})
+
+-- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
+hl.config({
+    dwindle = {
+        preserve_split = true, -- You probably want this
+    },
+})
+
+-- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
+hl.config({
+    master = {
+        new_status = "master",
+    },
+})
+
+-- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
+hl.config({
+    scrolling = {
+        fullscreen_on_one_column = true,
+    },
+})
+
+----------------
+----  MISC  ----
+----------------
+
+hl.config({
+    misc = {
+        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+    },
+})
+
+---------------------
+---- KEYBINDINGS ----
+---------------------
+
+local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+
+-- Terminal
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+
+-- Close Window
+local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+
+
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
+hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- Move focus with mainMod + arrow keys
+hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
+hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+-- Switch workspaces with mainMod + [0-9]
+-- Move active window to a workspace with mainMod + SHIFT + [0-9]
+for i = 1, 10 do
+    local key = i % 10 -- 10 maps to key 0
+    hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+end
+
+-- Example special workspace (scratchpad)
+hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- Scroll through existing workspaces with mainMod + scroll
+hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+
+--------------------------------
+---- WINDOWS AND WORKSPACES ----
+--------------------------------
+
+-- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
+-- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
+
+-- Example window rules that are useful
+
+local suppressMaximizeRule = hl.window_rule({
+    -- Ignore maximize requests from all apps. You'll probably like this.
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+
+    suppress_event = "maximize",
+})
+-- suppressMaximizeRule:set_enabled(false)
+
+hl.window_rule({
+    -- Fix some dragging issues with XWayland
+    name  = "fix-xwayland-drags",
+    match = {
+        class      = "^$",
+        title      = "^$",
+        xwayland   = true,
+        float      = true,
+        fullscreen = false,
+        pin        = false,
+    },
+
+    no_focus = true,
+})
+
+-- Layer rules also return a handle.
+-- local overlayLayerRule = hl.layer_rule({
+--     name  = "no-anim-overlay",
+--     match = { namespace = "^my-overlay$" },
+--     no_anim = true,
+-- })
+-- overlayLayerRule:set_enabled(false)
+
+-- Hyprland-run windowrule
+hl.window_rule({
+    name  = "move-hyprland-run",
+    match = { class = "hyprland-run" },
+
+    move  = "20 monitor_h-120",
+    float = true,
+})
+
+hl.config({
+    input = {
+        kb_layout = "ch",
+        kb_variant = "de_nodeadkeys",
+      }
+})

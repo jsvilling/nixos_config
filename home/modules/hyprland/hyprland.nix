@@ -7,7 +7,7 @@ let
   wofiSrc = ./wofi;
 in {
   home.file = {
-    ".config/hypr/hyprland.conf" = {
+    ".config/hypr/hyprland/hyprland.conf" = {
       source = hyprLandSrc;
       force = true;
       recursive = true;
