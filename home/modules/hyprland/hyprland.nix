@@ -9,6 +9,7 @@ in {
   home.file = {
     ".config/hypr/hyprland.conf" = {
       source = hyprLandSrc;
+      force = true;
       recursive = true;
     };
     ".config/waybar" = {
