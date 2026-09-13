@@ -53,6 +53,7 @@
       nil
       nixpkgs-fmt
       qmk_hid
+      zoxide
     ];
   };
 }
