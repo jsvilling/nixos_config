@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  hyprLandSrc = ./hyprland.conf;
+  hyprLandSrc = ./hyprland/hyprland.conf;
   waybarSrc = ./waybar;
   paperSrc = ./hyprpaper;
   wofiSrc = ./wofi;
