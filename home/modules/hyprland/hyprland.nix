@@ -1,16 +1,15 @@
 { pkgs, ... }:
 
 let
-  hyprLandSrc = ./hyprland/hyprland.conf;
+  hyprLandSrc = ./hyprland/hyprland.lua;
   waybarSrc = ./waybar;
   paperSrc = ./hyprpaper;
   wofiSrc = ./wofi;
 in {
   home.file = {
-    ".config/hypr/hyprland/hyprland.conf" = {
+    ".config/hypr/hyprland.lua" = {
       source = hyprLandSrc;
       force = true;
-      recursive = true;
     };
     ".config/waybar" = {
       source = waybarSrc;
