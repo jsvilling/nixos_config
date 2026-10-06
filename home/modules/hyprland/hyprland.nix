@@ -32,5 +32,6 @@ in {
     nwg-look
     hyprpaper
     dunst
+    noctalia
   ];
 }

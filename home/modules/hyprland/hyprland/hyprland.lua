@@ -18,7 +18,7 @@ hl.monitor({
 -- Set programs that you use
 local terminal    = "kitty"
 local fileManager = "nautilus"
-local menu        = "wofi --show drun"
+local menu        = "noctalia msg panel-toggle launcher"
 
 -------------------
 ---- AUTOSTART ----
@@ -27,7 +27,7 @@ local menu        = "wofi --show drun"
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
 hl.on("hyprland.start", function () 
-   hl.exec_cmd("waybar & hyprpaper")
+   hl.exec_cmd("noctalia")
 end)
 
 -------------------------------
@@ -47,13 +47,13 @@ hl.env("HYPRCURSOR_SIZE", "24")
 hl.config({
     general = {
         gaps_in  = 5,
-        gaps_out = 20,
+        gaps_out = 10,
 
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            --active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
+            --inactive_border = "rgba(595959aa)",
         },
 
         resize_on_border = true,
